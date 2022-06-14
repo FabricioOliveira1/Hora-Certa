@@ -2,9 +2,15 @@ import React from "react";
 import './Main.css'
 import Card from './Card'
 
-export default props => 
-    <React.Fragment>
+export default function Main(props){  
+
+    const cardList = props.cardList;
+   
+    return (
         <div className="main">
-            <Card />
+            {cardList.map(card => 
+              <Card key={cardList.medicine} cardData={card} />  
+            )}
         </div>
-    </React.Fragment>
+    )
+}    

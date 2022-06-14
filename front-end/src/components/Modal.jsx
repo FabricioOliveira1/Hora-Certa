@@ -1,59 +1,54 @@
-import React, {  Component } from "react";
+import React, { useEffect, useState } from "react";
 import './Modal.css'
 
 
-export default class Modal extends Component {
-    
-    state = {
-        isModalVisible: true //Aqui é setado o estado inicial do modal
+export default function Modal (props) {  
+
+    const [medicine, setMedicine] = useState('');
+    const [amount, setAmount] = useState('');
+    const [interval, setInterval] = useState('');
+    const [description, setDescription] = useState('');
+
+    function getCardInfoAndSave() {
+
+        let cardInfo = {
+            medicine,
+            amount,
+            interval,
+            description,
+        }      
+
+        props.modalMethods.saveModal(cardInfo)
     }
 
-    closeModal(){
-        this.setState({isModalVisible: false})
-    }
-
-    saveModal(){
-        this.setState({isModalVisible: true})
-    }
-
-    render(){
-
-        //{this.state.isModalVisible === true ?  <Modal /> : null}
-
-        if(this.state.isModalVisible === true){
-
-            return (
-                <div className="cardBlur">
-                    <div className="cardAdd">
-                        <form action="" className="formCard">
-                            <div>
-                                <label htmlFor="medicamento">Medicamento:</label>
-                                <input type="text" placeholder="Digite o medicamento" id="medicamento" />
-                                <label htmlFor="qtdCartela">Cartela</label>
-                                <input type="number" id="qtdCartela" />
-                            </div>
-                            <div className="posologia">
-                                <label for="intervalo">Intervalo:</label>
-                                <input type="number" id="intervalo" />
-                            </div>
-                            <div className="textareaDiv">
-                                <label htmlFor="descricao">Descrição:</label>
-                                <textarea type="text" id="descricao" rows={3} cols={65} />
-                            </div>
-                            <div className="buttons">
-                                <button className="salvar" onClick={() => this.saveModal()}>Salvar</button>
-                                <button className="cancelar" onClick={() => this.closeModal()}>Cancelar</button>
-                            </div>
-                        </form>
+    return (
+        <div className="cardBlur">
+            <div className="cardAdd">
+                <form action="" className="formCard">
+                    <div>
+                        <label htmlFor="medicamento">Medicamento:</label>
+                        <input type="text" onChange={(e) => setMedicine(e.target.value)} placeholder="Digite o medicamento" id="medicamento" />
+                        <label htmlFor="qtdCartela">Cartela</label>
+                        <input type="number" onChange={(e) => setAmount(e.target.value)} id="qtdCartela" />
                     </div>
-                </div>   
-                
-            ) 
-        } else if(this.state.isModalVisible === false){
-            return (null)
-        } else {
-            return (null)
-        }
-    }
+                    <div className="posologia">
+                        <label htmlFor="intervalo">Intervalo:</label>
+                        <input type="number" onChange={(e) => setInterval(e.target.value)} id="intervalo" />
+                    </div>
+                    <div className="textareaDiv">
+                        <label htmlFor="descricao">Descrição:</label>
+                        <textarea type="text" onChange={(e) => setDescription(e.target.value)} id="descricao" rows={3} cols={65} />
+                    </div>
+                    <div className="buttons">
+                        <button className="salvar" onClick={() => getCardInfoAndSave()}>Salvar</button>
+                        <button className="cancelar" onClick={() => props.modalMethods.closeModal()}>Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>   
+        
+    ) 
+        
+    
 
 }

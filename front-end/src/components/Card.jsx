@@ -1,29 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import './Card.css'
-// import { Component } from "react";
-
-export default props => 
-    <React.Fragment>
-        <div className="card">
-            <h2>Remedio Nome</h2>
-            <p>Descriçao do remedio que ser criado aqui nesse box.</p>
-            <p>intervalo</p>
-            <p>quantidade</p>
-            <p>proxima aplicação</p>
-        </div>
-    </React.Fragment>
-
-    // class Card extends Component{
 
 
+export default function Card (props) {
 
-    //     render(){
-    //         <div className="card">
-    // //         <h2>Remedio Nome</h2>
-    // //         <p>Descriçao do remedio que ser criado aqui nesse box.</p>
-    // //         <p>intervalo</p>
-    // //         <p>quantidade</p>
-    // //         <p>proxima aplicação</p>
-    // //     </div>
-    //     }
-    // }
+   
+
+    return (
+            <div className="card">                
+                <h2>{props.cardData.medicine}</h2>
+                <p>{props.cardData.description}</p>
+                <p>{props.cardData.interval}</p>
+                <p>{props.cardData.amount}</p>
+                <p>proxima aplicação</p> 
+            </div> 
+    )
+}

@@ -1,4 +1,14 @@
 .main{
     background-color: #ccc;
-    padding: 15px;
+
+    overflow: auto;
+
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+
+    
 }
