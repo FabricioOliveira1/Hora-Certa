@@ -7,9 +7,9 @@ Hora Certa é um projeto pessoal em desenvolvimento que se trata de uma agenda d
 Esta sendo desenvolvido com React, onde aplico conceitos a medida que evoluo nos estudos.
 
 ## Layout
-![Hora-Certa](https://github.com/FabricioOliveira1/readMe--model/blob/main/assets/hora-certa1.jpg)
-![Hora-Certa](https://github.com/FabricioOliveira1/readMe--model/blob/main/assets/hora-certa2.jpg)
-![Hora-Certa](https://github.com/FabricioOliveira1/readMe--model/blob/main/assets/hora-certa3.jpg)
+![Hora-Certa](https://github.com/FabricioOliveira1/readMe--model/blob/main/assets/hora-certa-1.jpg)
+![Hora-Certa](https://github.com/FabricioOliveira1/readMe--model/blob/main/assets/hora-certa-2.jpg)
+![Hora-Certa](https://github.com/FabricioOliveira1/readMe--model/blob/main/assets/hora-certa-3.jpg)
 
 # Tecnologias utilizadas
 
