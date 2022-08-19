@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container } from './style'
 import remedio from '../../assets/Icons/remedio-64px.png'
+import { CardContext } from "../../CardContext";
 
 
 export function User() { 
+
+const { passedUserName } = useContext(CardContext)
+
     return(   
             <Container>
                 <div className="title">
@@ -12,9 +16,8 @@ export function User() {
                 </div>
                 <div className="info">
                     <span className="img_container"><img alt=""/></span>
-                    <h2>Fabricio Oliveira</h2>
-                    <p>27 Anos</p>
-                    <p>Masculino</p>
+                    <h2>{passedUserName}</h2>
+                    {/* <p>28 Anos</p>                    */}
                 </div>
             </Container> 
     )

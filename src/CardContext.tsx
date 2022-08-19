@@ -30,6 +30,7 @@ interface CardContextProps {
     deleteCard: (id: number) => Promise<void>,
     handleLogin: (userName: string) => void,
     logged: boolean,
+    passedUserName: string,
     }
 
 
@@ -40,6 +41,7 @@ export const CardContext = createContext<CardContextProps>(
 
 export function CardProvider({ children }:CardProviderProps) {
 
+    const [passedUserName, setPassaedUserName] = useState('')
     const [cards, setCards] = useState<CardProps[]>([])
     const [logged, setlogged] = useState(false)
 
@@ -72,13 +74,15 @@ export function CardProvider({ children }:CardProviderProps) {
         setCards(cardsFiltered)
     }
 
-     function handleLogin (userName: string) {     
+    function handleLogin (userName: string) {    
+        
+        setPassaedUserName(userName)
         setlogged(true)
     }
 
     
     return (
-        <CardContext.Provider value={{ cards, createCard, deleteCard, handleLogin, logged}}>
+        <CardContext.Provider value={{ cards, createCard, deleteCard, handleLogin, logged, passedUserName}}>
             {children}
         </CardContext.Provider>
     )

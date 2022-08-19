@@ -34,13 +34,13 @@ export function Login () {
                     <h1>Hora Certa</h1>
                 </div>
                 <div className="container-button" >
-                    {/*isInuputLoginOpen ? 
+                    {isInuputLoginOpen ? 
                     <div className="container-input">
-                        <input onChange={event => setUserName(event.target.value)} type="text" placeholder="Usuario Github" />
+                        <input onChange={event => setUserName(event.target.value)} type="text" placeholder="Digite seu Nome" />
                         <button className="close-button" onClick={handleOpenApp}><img src={forbidden} alt="Fechar" /></button>
-                    </div> : */}                 
-                    {/* <button onClick={handleisInuputLoginOpen} >Entrar com Github</button> */}
-                    <button onClick={handleOpenApp}>Entrar</button>
+                    </div> :                 
+                     <button onClick={handleisInuputLoginOpen} >Entrar</button> }
+                    
                 </div>
             </div>
             <div className="footer">
